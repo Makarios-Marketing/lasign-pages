@@ -146,6 +146,31 @@
   .ft-bot .in{max-width:var(--wrap);margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.82rem;color:#7a84a0;}
   @media(max-width:760px){.ft-grid{grid-template-columns:1fr;gap:26px;}}
 
+  /* images + wow */
+  .bimg{background-size:cover;background-position:center;transition:transform .55s cubic-bezier(.2,.7,.2,1);}
+  .brow:hover .bimg{transform:scale(1.03);}
+  .bimg .bnum,.bimg .cap{z-index:1;position:relative;}
+  .bimg .bnum{position:absolute;}
+  /* portfolio gallery */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px;}
+  .gitem{aspect-ratio:4/3;border-radius:8px;overflow:hidden;background-size:cover;background-position:center;position:relative;transition:transform .4s,box-shadow .4s;border:1px solid var(--line);}
+  .gitem::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(16,20,34,.38),transparent 55%);}
+  .gitem:hover{transform:translateY(-5px) scale(1.012);box-shadow:0 22px 44px -26px rgba(20,24,40,.55);}
+  @media(max-width:760px){.gallery{grid-template-columns:1fr 1fr;}}
+  @media(max-width:460px){.gallery{grid-template-columns:1fr;}}
+  /* orange mid CTA band */
+  .ctao{background:linear-gradient(120deg,var(--orange),#f26a1b);color:#fff;text-align:center;}
+  .ctao h2{color:#fff;font-size:clamp(1.6rem,3.2vw,2.2rem);}
+  .ctao p{color:#fff;opacity:.96;max-width:56ch;margin:14px auto 0;}
+  .ctao .acts{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:24px;}
+  .ctao .btn-white{background:#fff;color:var(--orange-d);border-color:#fff;}
+  .ctao .btn-white:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .ctao .btn-line{border-color:rgba(255,255,255,.7);}
+  /* scroll reveal */
+  @media (prefers-reduced-motion: no-preference){
+    .js-anim .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+    .js-anim .reveal.in{opacity:1;transform:none;}
+  }
   .note{background:#fffbeb;border:1px solid #f3e4b3;border-radius:8px;padding:14px 18px;font-size:.85rem;color:#7a601a;max-width:var(--wrap);margin:18px auto 0;}
 </style>
 
@@ -191,7 +216,7 @@
     </div>
     <div class="build">
       <div class="brow">
-        <div class="bimg"><span class="bnum">01</span><span class="cap">Hanging sign under a canopy</span></div>
+        <div class="bimg" style="background:linear-gradient(to top,rgba(16,20,34,.5),rgba(16,20,34,.08) 55%),url('https://losangelesigncompany.com/wp-content/uploads/2026/05/storefront-signage-portfolio-11.webp') center/cover"><span class="bnum">01</span><span class="cap">Hanging sign under a canopy</span></div>
         <div class="btext"><h3>Hanging Under-Canopy Signs</h3>
           <p>A compact sign that hangs below an awning or canopy, right in a walker's line of sight. The go-to for shops set back under a covered entrance.</p>
           <div class="bspec"><b>Mounts As</b> Suspended below the canopy</div>
@@ -199,7 +224,7 @@
         </div>
       </div>
       <div class="brow">
-        <div class="bimg"><span class="bnum">02</span><span class="cap">Bracket-mounted blade on a brick facade</span></div>
+        <div class="bimg" style="background:linear-gradient(to top,rgba(16,20,34,.5),rgba(16,20,34,.08) 55%),url('https://losangelesigncompany.com/wp-content/uploads/2025/11/burbank-channel-letters-storefront.webp') center/cover"><span class="bnum">02</span><span class="cap">Bracket-mounted blade on a brick facade</span></div>
         <div class="btext"><h3>Bracket-Mounted Blades</h3>
           <p>A decorative steel or wrought-iron arm holds the sign off the wall. The classic storefront look, and the sturdiest mount for a larger blade.</p>
           <div class="bspec"><b>Mounts As</b> Decorative arm off the wall</div>
@@ -207,7 +232,7 @@
         </div>
       </div>
       <div class="brow">
-        <div class="bimg"><span class="bnum">03</span><span class="cap">Illuminated blade sign at night</span></div>
+        <div class="bimg" style="background:linear-gradient(to top,rgba(16,20,34,.5),rgba(16,20,34,.08) 55%),url('https://losangelesigncompany.com/wp-content/uploads/2025/02/backlit-signs-portfolio-7.webp') center/cover"><span class="bnum">03</span><span class="cap">Illuminated blade sign at night</span></div>
         <div class="btext"><h3>Illuminated Blade Signs</h3>
           <p>Halo or backlit faces so the sign reads after dark and in LA's evening foot traffic. Built as a UL-listed electric sign with the wiring reachable later.</p>
           <div class="bspec"><b>Lights As</b> Halo or backlit, UL-listed</div>
@@ -215,7 +240,7 @@
         </div>
       </div>
       <div class="brow">
-        <div class="bimg"><span class="bnum">04</span><span class="cap">Double-sided projecting sign</span></div>
+        <div class="bimg" style="background:linear-gradient(to top,rgba(16,20,34,.5),rgba(16,20,34,.08) 55%),url('https://losangelesigncompany.com/wp-content/uploads/2025/02/neon-signs-portfolio-12.webp') center/cover"><span class="bnum">04</span><span class="cap">Double-sided projecting sign</span></div>
         <div class="btext"><h3>Double-Sided Projecting Signs</h3>
           <p>Graphics on both faces so the sign works for foot traffic coming from either direction. Standard on a busy two-way sidewalk.</p>
           <div class="bspec"><b>Reads From</b> Both directions</div>
@@ -223,7 +248,7 @@
         </div>
       </div>
       <div class="brow">
-        <div class="bimg"><span class="bnum">05</span><span class="cap">Die-cut shaped blade sign</span></div>
+        <div class="bimg" style="background:linear-gradient(to top,rgba(16,20,34,.5),rgba(16,20,34,.08) 55%),url('https://losangelesigncompany.com/wp-content/uploads/2026/06/pearpop-logo-sign-installation-santa-monica.jpg') center/cover"><span class="bnum">05</span><span class="cap">Die-cut shaped blade sign</span></div>
         <div class="btext"><h3>Dimensional &amp; Shaped Blades</h3>
           <p>Die-cut to your logo or a custom silhouette instead of a plain rectangle. The kind of sign people stop and photograph.</p>
           <div class="bspec"><b>Shaped As</b> Custom logo or silhouette</div>
@@ -231,7 +256,7 @@
         </div>
       </div>
       <div class="brow">
-        <div class="bimg"><span class="bnum">06</span><span class="cap">Traditional blade in a historic district</span></div>
+        <div class="bimg" style="background:linear-gradient(to top,rgba(16,20,34,.5),rgba(16,20,34,.08) 55%),url('https://losangelesigncompany.com/wp-content/uploads/2026/05/neon-signs-portfolio-7-scaled-1.jpeg') center/cover"><span class="bnum">06</span><span class="cap">Traditional blade in a historic district</span></div>
         <div class="btext"><h3>Historic &amp; District-Style Blades</h3>
           <p>Traditional projecting signs for mixed-use and historic storefronts where a flat wall sign would look out of place.</p>
           <div class="bspec"><b>Suits</b> Historic &amp; mixed-use fronts</div>
@@ -324,6 +349,36 @@
   </div>
 </section>
 
+<!-- ============ PORTFOLIO ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head c"><span class="eyebrow c">Around Town</span><h2>Blade Signs We've Put Up Around LA</h2>
+      <p>Hanging signs for Westside boutiques, bracket-mounted blades on restaurant frontages, and lit projecting signs for bars and cafés. Two decades of storefront signage across the basin.</p>
+    </div>
+    <div class="gallery">
+      <div class="gitem" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2026/05/backlit-signs-portfolio-3.webp')"></div>
+      <div class="gitem" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2026/05/monument-signs-portfolio-1.webp')"></div>
+      <div class="gitem" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2025/11/burbank-lobby-logo-sign.jpeg')"></div>
+      <div class="gitem" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2026/06/pearpop-logo-sign-installation-santa-monica.jpg')"></div>
+      <div class="gitem" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2025/11/burbank-channel-letters-storefront.webp')"></div>
+      <div class="gitem" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2026/05/storefront-signage-portfolio-11.webp')"></div>
+    </div>
+    <p class="micro-cta" style="text-align:center">Want to see more? <a href="https://losangelesigncompany.com/custom-sign-portfolio/">Have a look at what we've built.</a></p>
+  </div>
+</section>
+
+<!-- ============ MID CTA (orange) ============ -->
+<section class="ctao">
+  <div class="wrap">
+    <h2>Make your storefront impossible to walk past</h2>
+    <p>A blade sign is one of the fastest ways to turn sidewalk traffic into walk-ins. Tell us your address and we'll show you what's possible on your frontage.</p>
+    <div class="acts">
+      <a class="btn btn-white" href="https://losangelesigncompany.com/get-a-quote/">Request a Free Quote</a>
+      <a class="btn btn-line" href="tel:+13108760385">Call (310) 876-0385</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SERVICE AREA ============ -->
 <section>
   <div class="wrap">
@@ -407,4 +462,20 @@
   <div class="ft-bot"><div class="in"><span>© Los Angeles Sign Company</span><span>Mockup for internal review</span></div></div>
 </footer>
 
-<p class="note"><strong>Mockup only.</strong> Rebuilt to match the live losangelesigncompany.com service-page design: orange CTAs + navy accents, centered headers, hero feature row, alternating photo/text rows with number badges and spec callouts. Photo slots are placeholders. Not published, for sign-off before anything goes to WordPress.</p>
+<p class="note"><strong>Mockup only.</strong> Rebuilt to match the live losangelesigncompany.com service-page design: orange CTAs + navy accents, centered headers, hero feature row, alternating photo/text rows with number badges and spec callouts. Real LA Sign photos used throughout. Not published, for sign-off before anything goes to WordPress.</p>
+
+<script>
+(function(){
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  document.documentElement.classList.add('js-anim');
+  var sel='.sec-head,.brow,.helperband h2,.helperband p,.helperband .acts,.split .box,.gallery .gitem,.steps .step,.ctao h2,.ctao p,.ctao .acts,.area>div,.faq details,.cta h2,.cta p,.cta .acts';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  els.forEach(function(el){el.classList.add('reveal');});
+  function stagger(p,c){[].forEach.call(document.querySelectorAll(p),function(x){[].forEach.call(x.querySelectorAll(c),function(e,i){e.style.transitionDelay=(i*0.07)+'s';});});}
+  stagger('.gallery','.gitem');stagger('.steps','.step');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el);});
+  } else { els.forEach(function(el){el.classList.add('in');}); }
+})();
+</script>
