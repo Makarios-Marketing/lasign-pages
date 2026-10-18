@@ -171,6 +171,42 @@
     .js-anim .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
     .js-anim .reveal.in{opacity:1;transform:none;}
   }
+  /* types = image-top card grid */
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;}
+  .tcard:hover{transform:translateY(-6px);box-shadow:0 26px 54px -32px rgba(20,24,40,.5);}
+  .tcard .ph{position:relative;aspect-ratio:16/11;background-size:cover;background-position:center;}
+  .tcard .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(16,20,34,.35),transparent 55%);}
+  .tcard .ph .bnum{position:absolute;top:0;left:0;z-index:1;background:var(--orange);color:#fff;font-family:var(--disp);font-weight:800;padding:7px 14px;font-size:.95rem;}
+  .tcard .cbody{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1;}
+  .tcard h3{font-size:1.15rem;margin-bottom:8px;}
+  .tcard p{color:var(--grey);font-size:.94rem;margin:0 0 14px;}
+  .tcard .bspec{margin:auto 0 14px;}
+  .tcard .blink{margin-top:auto;}
+  @media(max-width:900px){.tgrid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.tgrid{grid-template-columns:1fr;}}
+  /* spec panel (how far) */
+  .specwrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;margin-top:8px;}
+  .specpanel{background:var(--navy);color:#fff;border-radius:12px;padding:12px 32px;box-shadow:0 30px 60px -40px rgba(16,20,34,.7);}
+  .specpanel .srow{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.12);}
+  .specpanel .srow:last-child{border-bottom:0;}
+  .specpanel .big{font-family:var(--disp);font-weight:800;font-size:1.7rem;color:var(--orange);line-height:1;white-space:nowrap;}
+  .specpanel .lbl{font-size:.92rem;color:#c7cdda;text-align:right;}
+  @media(max-width:820px){.specwrap{grid-template-columns:1fr;gap:28px;}}
+  /* photo + text split */
+  .imgsplit{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:8px;}
+  .imgsplit .pic{aspect-ratio:4/3;border-radius:12px;background-size:cover;background-position:center;border:1px solid var(--line);box-shadow:0 30px 60px -42px rgba(16,20,34,.6);}
+  .imgsplit h2{font-size:clamp(1.6rem,3.2vw,2.2rem);margin:12px 0 14px;}
+  .imgsplit p{color:var(--grey);}
+  @media(max-width:820px){.imgsplit{grid-template-columns:1fr;gap:24px;}.imgsplit .pic{order:-1;}}
+  /* vertical timeline (process) */
+  .tl{max-width:720px;margin:40px auto 0;position:relative;}
+  .tl::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;width:2px;background:var(--line);}
+  .tli{position:relative;padding:0 0 32px 66px;}
+  .tli:last-child{padding-bottom:0;}
+  .tli .dot{position:absolute;left:0;top:-2px;width:44px;height:44px;border-radius:50%;background:var(--orange);color:#fff;font-family:var(--disp);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:1rem;z-index:1;box-shadow:0 0 0 6px var(--paper);}
+  .tli h3{font-size:1.12rem;margin-bottom:5px;}
+  .tli p{color:var(--grey);font-size:.97rem;margin:0;}
   .note{background:#fffbeb;border:1px solid #f3e4b3;border-radius:8px;padding:14px 18px;font-size:.85rem;color:#7a601a;max-width:var(--wrap);margin:18px auto 0;}
 </style>
 
@@ -214,50 +250,50 @@
     <div class="sec-head c"><span class="eyebrow c">What We Build</span><h2>Types of Blade &amp; Projecting Signs We Build</h2>
       <p>A few builds cover almost every storefront we work on. What separates them is how the sign mounts and whether it lights up.</p>
     </div>
-    <div class="build">
-      <div class="brow">
-        <div class="bimg" style="background:linear-gradient(to top,rgba(16,20,34,.5),rgba(16,20,34,.08) 55%),url('https://losangelesigncompany.com/wp-content/uploads/2026/05/storefront-signage-portfolio-11.webp') center/cover"><span class="bnum">01</span><span class="cap">Hanging sign under a canopy</span></div>
-        <div class="btext"><h3>Hanging Under-Canopy Signs</h3>
+    <div class="tgrid">
+      <div class="tcard">
+        <div class="ph" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2026/05/storefront-signage-portfolio-11.webp')"><span class="bnum">01</span></div>
+        <div class="cbody"><h3>Hanging Under-Canopy Signs</h3>
           <p>A compact sign that hangs below an awning or canopy, right in a walker's line of sight. The go-to for shops set back under a covered entrance.</p>
           <div class="bspec"><b>Mounts As</b> Suspended below the canopy</div>
           <a class="blink" href="https://losangelesigncompany.com/storefront-sign-types-los-angeles/">Storefront signage &rarr;</a>
         </div>
       </div>
-      <div class="brow">
-        <div class="bimg" style="background:linear-gradient(to top,rgba(16,20,34,.5),rgba(16,20,34,.08) 55%),url('https://losangelesigncompany.com/wp-content/uploads/2025/11/burbank-channel-letters-storefront.webp') center/cover"><span class="bnum">02</span><span class="cap">Bracket-mounted blade on a brick facade</span></div>
-        <div class="btext"><h3>Bracket-Mounted Blades</h3>
+      <div class="tcard">
+        <div class="ph" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2025/11/burbank-channel-letters-storefront.webp')"><span class="bnum">02</span></div>
+        <div class="cbody"><h3>Bracket-Mounted Blades</h3>
           <p>A decorative steel or wrought-iron arm holds the sign off the wall. The classic storefront look, and the sturdiest mount for a larger blade.</p>
           <div class="bspec"><b>Mounts As</b> Decorative arm off the wall</div>
           <a class="blink" href="https://losangelesigncompany.com/architectural-signs/">Architectural signage &rarr;</a>
         </div>
       </div>
-      <div class="brow">
-        <div class="bimg" style="background:linear-gradient(to top,rgba(16,20,34,.5),rgba(16,20,34,.08) 55%),url('https://losangelesigncompany.com/wp-content/uploads/2025/02/backlit-signs-portfolio-7.webp') center/cover"><span class="bnum">03</span><span class="cap">Illuminated blade sign at night</span></div>
-        <div class="btext"><h3>Illuminated Blade Signs</h3>
+      <div class="tcard">
+        <div class="ph" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2025/02/backlit-signs-portfolio-7.webp')"><span class="bnum">03</span></div>
+        <div class="cbody"><h3>Illuminated Blade Signs</h3>
           <p>Halo or backlit faces so the sign reads after dark and in LA's evening foot traffic. Built as a UL-listed electric sign with the wiring reachable later.</p>
           <div class="bspec"><b>Lights As</b> Halo or backlit, UL-listed</div>
           <a class="blink" href="https://losangelesigncompany.com/backlit-signs-letters/">Backlit signs &amp; letters &rarr;</a>
         </div>
       </div>
-      <div class="brow">
-        <div class="bimg" style="background:linear-gradient(to top,rgba(16,20,34,.5),rgba(16,20,34,.08) 55%),url('https://losangelesigncompany.com/wp-content/uploads/2025/02/neon-signs-portfolio-12.webp') center/cover"><span class="bnum">04</span><span class="cap">Double-sided projecting sign</span></div>
-        <div class="btext"><h3>Double-Sided Projecting Signs</h3>
+      <div class="tcard">
+        <div class="ph" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2025/02/neon-signs-portfolio-12.webp')"><span class="bnum">04</span></div>
+        <div class="cbody"><h3>Double-Sided Projecting Signs</h3>
           <p>Graphics on both faces so the sign works for foot traffic coming from either direction. Standard on a busy two-way sidewalk.</p>
           <div class="bspec"><b>Reads From</b> Both directions</div>
           <a class="blink" href="https://losangelesigncompany.com/get-a-quote/">Get a quote &rarr;</a>
         </div>
       </div>
-      <div class="brow">
-        <div class="bimg" style="background:linear-gradient(to top,rgba(16,20,34,.5),rgba(16,20,34,.08) 55%),url('https://losangelesigncompany.com/wp-content/uploads/2026/06/pearpop-logo-sign-installation-santa-monica.jpg') center/cover"><span class="bnum">05</span><span class="cap">Die-cut shaped blade sign</span></div>
-        <div class="btext"><h3>Dimensional &amp; Shaped Blades</h3>
+      <div class="tcard">
+        <div class="ph" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2026/06/pearpop-logo-sign-installation-santa-monica.jpg')"><span class="bnum">05</span></div>
+        <div class="cbody"><h3>Dimensional &amp; Shaped Blades</h3>
           <p>Die-cut to your logo or a custom silhouette instead of a plain rectangle. The kind of sign people stop and photograph.</p>
           <div class="bspec"><b>Shaped As</b> Custom logo or silhouette</div>
           <a class="blink" href="https://losangelesigncompany.com/architectural-signs/">Custom fabrication &rarr;</a>
         </div>
       </div>
-      <div class="brow">
-        <div class="bimg" style="background:linear-gradient(to top,rgba(16,20,34,.5),rgba(16,20,34,.08) 55%),url('https://losangelesigncompany.com/wp-content/uploads/2026/05/neon-signs-portfolio-7-scaled-1.jpeg') center/cover"><span class="bnum">06</span><span class="cap">Traditional blade in a historic district</span></div>
-        <div class="btext"><h3>Historic &amp; District-Style Blades</h3>
+      <div class="tcard">
+        <div class="ph" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2026/05/neon-signs-portfolio-7-scaled-1.jpeg')"><span class="bnum">06</span></div>
+        <div class="cbody"><h3>Historic &amp; District-Style Blades</h3>
           <p>Traditional projecting signs for mixed-use and historic storefronts where a flat wall sign would look out of place.</p>
           <div class="bspec"><b>Suits</b> Historic &amp; mixed-use fronts</div>
           <a class="blink" href="https://losangelesigncompany.com/storefront-sign-types-los-angeles/">Storefront signage &rarr;</a>
@@ -282,9 +318,19 @@
 <!-- ============ PROJECTION ============ -->
 <section class="band">
   <div class="wrap">
-    <div class="sec-head c"><span class="eyebrow c">Getting It Right</span><h2>How Far Can a Blade Sign Stick Out?</h2></div>
-    <p class="lead c">Two things decide it, and both come from the city rather than from taste. The sign can only project so far over the public sidewalk, and it has to clear a set height above it, usually around eight feet, so nobody walks into it. On a narrow sidewalk that limits how big the blade can be; on a wide one you have more room. Where your storefront sits, and how much sidewalk is in front of it, drives the whole design.</p>
-    <p class="micro-cta" style="text-align:center">Not sure what your frontage allows? <a href="https://losangelesigncompany.com/get-a-quote/">We measure it on the site visit</a> and show you the sizes drawn on your own building.</p>
+    <div class="specwrap">
+      <div>
+        <span class="eyebrow">Getting It Right</span>
+        <div class="sec-head" style="margin:12px 0 0"><h2>How Far Can a Blade Sign Stick Out?</h2></div>
+        <p class="lead" style="margin-top:14px">Two things decide it, and both come from the city rather than from taste. The sign can only project so far over the public sidewalk, and it has to clear a set height above it so nobody walks into it. On a narrow sidewalk that limits how big the blade can be; on a wide one you have more room.</p>
+        <p class="micro-cta">Not sure what your frontage allows? <a href="https://losangelesigncompany.com/get-a-quote/">We measure it on the site visit</a> and draw the sizes on a photo of your own building.</p>
+      </div>
+      <div class="specpanel">
+        <div class="srow"><span class="big">~8 ft</span><span class="lbl">Typical minimum clearance above the sidewalk</span></div>
+        <div class="srow"><span class="big">Sidewalk</span><span class="lbl">Width sets how far the blade can project out</span></div>
+        <div class="srow"><span class="big">LADBS</span><span class="lbl">Sign permit we prepare and handle for you</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -317,9 +363,16 @@
 <!-- ============ ADDING ONE ============ -->
 <section class="band">
   <div class="wrap">
-    <div class="sec-head c"><span class="eyebrow c">Adding One On</span><h2>Adding a Blade Sign to an Existing Storefront</h2></div>
-    <p class="lead c">Most blade signs go onto a building that's already there, so the mount matters as much as the design. Brick, stucco, and a metal canopy each take a different anchor, and a heavier blade on an older wall sometimes needs a quick structural check before it goes up. If you lease, the projection usually needs the landlord's sign-off too, since it hangs over the shared frontage. We sort all of that out before anything is built, so install day is just install day.</p>
-    <p class="micro-cta" style="text-align:center">Have a storefront in mind? <a href="https://losangelesigncompany.com/get-a-quote/">Send a photo</a> and we'll tell you what it'll take to mount a blade on it.</p>
+    <div class="imgsplit">
+      <div class="pic" style="background-image:url('https://losangelesigncompany.com/wp-content/uploads/2025/11/burbank-lobby-logo-sign.jpeg')"></div>
+      <div>
+        <span class="eyebrow">Adding One On</span>
+        <h2>Adding a Blade Sign to an Existing Storefront</h2>
+        <p>Most blade signs go onto a building that's already there, so the mount matters as much as the design. Brick, stucco, and a metal canopy each take a different anchor, and a heavier blade on an older wall sometimes needs a quick structural check before it goes up.</p>
+        <p>If you lease, the projection usually needs the landlord's sign-off too, since it hangs over the shared frontage. We sort all of that out before anything is built, so install day is just install day.</p>
+        <p class="micro-cta">Have a storefront in mind? <a href="https://losangelesigncompany.com/get-a-quote/">Send a photo</a> and we'll tell you what it'll take to mount a blade on it.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -329,12 +382,12 @@
     <div class="sec-head c"><span class="eyebrow c">How It Goes</span><h2>From Site Visit to Installed Sign</h2>
       <p>Five steps. The one most people don't expect is how much of it happens before anything is built.</p>
     </div>
-    <div class="steps">
-      <div class="step"><h3>Site &amp; Mount Check</h3><p>We measure the frontage, read the wall, and check the clearance over the sidewalk.</p></div>
-      <div class="step"><h3>Drawing &amp; Sizing</h3><p>You see the sign on a photo of your own building, with the projection and height called out.</p></div>
-      <div class="step"><h3>Permit Submission</h3><p>We prepare and submit the drawings. A projecting sign needs city approval to hang over the sidewalk.</p></div>
-      <div class="step"><h3>Fabrication</h3><p>Built in our own shop, with the bracket engineered to carry the sign for the long haul.</p></div>
-      <div class="step"><h3>Install &amp; Hand-Off</h3><p>One crew, usually one day, mounted and leveled with the warranty handed over.</p></div>
+    <div class="tl">
+      <div class="tli"><span class="dot">1</span><h3>Site &amp; Mount Check</h3><p>We measure the frontage, read the wall, and check the clearance over the sidewalk.</p></div>
+      <div class="tli"><span class="dot">2</span><h3>Drawing &amp; Sizing</h3><p>You see the sign on a photo of your own building, with the projection and height called out.</p></div>
+      <div class="tli"><span class="dot">3</span><h3>Permit Submission</h3><p>We prepare and submit the drawings. A projecting sign needs city approval to hang over the sidewalk.</p></div>
+      <div class="tli"><span class="dot">4</span><h3>Fabrication</h3><p>Built in our own shop, with the bracket engineered to carry the sign for the long haul.</p></div>
+      <div class="tli"><span class="dot">5</span><h3>Install &amp; Hand-Off</h3><p>One crew, usually one day, mounted and leveled with the warranty handed over.</p></div>
     </div>
     <p class="micro-cta" style="text-align:center">Ready to start at step one? <a href="https://losangelesigncompany.com/get-a-quote/">The site visit and the quote cost nothing.</a></p>
   </div>
@@ -468,11 +521,11 @@
 (function(){
   if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   document.documentElement.classList.add('js-anim');
-  var sel='.sec-head,.brow,.helperband h2,.helperband p,.helperband .acts,.split .box,.gallery .gitem,.steps .step,.ctao h2,.ctao p,.ctao .acts,.area>div,.faq details,.cta h2,.cta p,.cta .acts';
+  var sel='.sec-head,.tcard,.specpanel,.imgsplit .pic,.helperband h2,.helperband p,.helperband .acts,.split .box,.gallery .gitem,.tli,.ctao h2,.ctao p,.ctao .acts,.area>div,.faq details,.cta h2,.cta p,.cta .acts';
   var els=[].slice.call(document.querySelectorAll(sel));
   els.forEach(function(el){el.classList.add('reveal');});
   function stagger(p,c){[].forEach.call(document.querySelectorAll(p),function(x){[].forEach.call(x.querySelectorAll(c),function(e,i){e.style.transitionDelay=(i*0.07)+'s';});});}
-  stagger('.gallery','.gitem');stagger('.steps','.step');
+  stagger('.gallery','.gitem');stagger('.tgrid','.tcard');stagger('.tl','.tli');
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
     els.forEach(function(el){io.observe(el);});
