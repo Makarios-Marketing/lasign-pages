@@ -506,11 +506,11 @@
 (function(){
   if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   document.documentElement.classList.add('js-anim');
-  var sel='.sec-head,.tcard,.specpanel,.imgsplit .pic,.helperband h2,.helperband p,.helperband .acts,.dtable .drow,.gallery .gitem,.tli,.reqs .req,.areac,.ctao h2,.ctao p,.ctao .acts,.faq details,.sec-cta,.cta h2,.cta p,.cta .acts';
+  var sel='.tcard,.gallery .gitem';
   var els=[].slice.call(document.querySelectorAll(sel));
   els.forEach(function(el){el.classList.add('reveal');});
   function stagger(p,c){[].forEach.call(document.querySelectorAll(p),function(x){[].forEach.call(x.querySelectorAll(c),function(e,i){e.style.transitionDelay=(i*0.06)+'s';});});}
-  stagger('.gallery','.gitem');stagger('.tgrid','.tcard');stagger('.tl','.tli');stagger('.reqs','.req');stagger('.dtable','.drow');
+  stagger('.gallery','.gitem');stagger('.tgrid','.tcard');
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
     els.forEach(function(el){io.observe(el);});
